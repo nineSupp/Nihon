@@ -1,3 +1,6 @@
+
+import javax.swing.JFrame;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,12 +11,13 @@
  * @author pilotjones
  */
 public class mainUI extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form mainUI
      */
     public mainUI() {
         initComponents();
+        
     }
 
     /**
@@ -25,23 +29,112 @@ public class mainUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        mainPanel = new javax.swing.JPanel();
+        newGame = new javax.swing.JButton();
+        loadGame = new javax.swing.JButton();
+        optionBut = new javax.swing.JButton();
+        exitGame = new javax.swing.JButton();
+        mainTitleOutlier = new javax.swing.JLabel();
+        mainTitle = new javax.swing.JLabel();
+        mainTitleUnderline = new javax.swing.JLabel();
+        mainSakura = new javax.swing.JLabel();
+        mainDoor = new javax.swing.JLabel();
+        bgFade = new javax.swing.JLabel();
+        bgColor = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Nihon-Go");
         setPreferredSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
+        setSize(new java.awt.Dimension(1280, 720));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+        getContentPane().setLayout(null);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
-        );
+        mainPanel.setPreferredSize(new java.awt.Dimension(1280, 720));
+        mainPanel.setLayout(null);
+
+        newGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/button.png"))); // NOI18N
+        newGame.setBorder(null);
+        newGame.setBorderPainted(false);
+        newGame.setContentAreaFilled(false);
+        mainPanel.add(newGame);
+        newGame.setBounds(540, 340, 200, 50);
+
+        loadGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/button.png"))); // NOI18N
+        loadGame.setBorder(null);
+        loadGame.setBorderPainted(false);
+        loadGame.setContentAreaFilled(false);
+        mainPanel.add(loadGame);
+        loadGame.setBounds(540, 410, 200, 50);
+
+        optionBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/button.png"))); // NOI18N
+        optionBut.setBorder(null);
+        optionBut.setBorderPainted(false);
+        optionBut.setContentAreaFilled(false);
+        mainPanel.add(optionBut);
+        optionBut.setBounds(540, 480, 200, 50);
+
+        exitGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/button.png"))); // NOI18N
+        exitGame.setBorder(null);
+        exitGame.setBorderPainted(false);
+        exitGame.setContentAreaFilled(false);
+        exitGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitGameActionPerformed(evt);
+            }
+        });
+        mainPanel.add(exitGame);
+        exitGame.setBounds(540, 550, 200, 50);
+
+        mainTitleOutlier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/mainTitleOutlier.png"))); // NOI18N
+        mainPanel.add(mainTitleOutlier);
+        mainTitleOutlier.setBounds(0, 0, 1280, 720);
+
+        mainTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/mainTitle.png"))); // NOI18N
+        mainPanel.add(mainTitle);
+        mainTitle.setBounds(0, 0, 1280, 720);
+
+        mainTitleUnderline.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/mainTitleUnderline.png"))); // NOI18N
+        mainPanel.add(mainTitleUnderline);
+        mainTitleUnderline.setBounds(0, 0, 1280, 720);
+
+        mainSakura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/mainSakura.png"))); // NOI18N
+        mainSakura.setPreferredSize(new java.awt.Dimension(1280, 720));
+        mainPanel.add(mainSakura);
+        mainSakura.setBounds(0, 0, 1280, 720);
+
+        mainDoor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/mainDoor.png"))); // NOI18N
+        mainPanel.add(mainDoor);
+        mainDoor.setBounds(0, 0, 1280, 720);
+
+        bgFade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/bgFade.png"))); // NOI18N
+        mainPanel.add(bgFade);
+        bgFade.setBounds(0, 0, 1280, 720);
+
+        bgColor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/bgColor.png"))); // NOI18N
+        bgColor.setPreferredSize(new java.awt.Dimension(1280, 720));
+        mainPanel.add(bgColor);
+        bgColor.setBounds(0, 0, 1280, 720);
+
+        getContentPane().add(mainPanel);
+        mainPanel.setBounds(0, 0, 1280, 720);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        this.setLocationRelativeTo(null);
+    }//GEN-LAST:event_formWindowOpened
+
+    private void exitGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitGameActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_exitGameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -76,8 +169,21 @@ public class mainUI extends javax.swing.JFrame {
                 new mainUI().setVisible(true);
             }
         });
+       
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bgColor;
+    private javax.swing.JLabel bgFade;
+    private javax.swing.JButton exitGame;
+    private javax.swing.JButton loadGame;
+    private javax.swing.JLabel mainDoor;
+    private javax.swing.JPanel mainPanel;
+    private javax.swing.JLabel mainSakura;
+    private javax.swing.JLabel mainTitle;
+    private javax.swing.JLabel mainTitleOutlier;
+    private javax.swing.JLabel mainTitleUnderline;
+    private javax.swing.JButton newGame;
+    private javax.swing.JButton optionBut;
     // End of variables declaration//GEN-END:variables
 }
