@@ -12,12 +12,12 @@ import javax.swing.ImageIcon;
  *
  * @author pilotjones
  */
-public class mainUI extends javax.swing.JFrame {
+public class newGameUI extends javax.swing.JFrame {
     
     /**
      * Creates new form mainUI
      */
-    public mainUI() {
+    public newGameUI() {
         initComponents();
         Image img = new ImageIcon(this.getClass().getResource("assets/jpnFlag"
                 + ".png")).getImage();
@@ -34,27 +34,15 @@ public class mainUI extends javax.swing.JFrame {
     private void initComponents() {
 
         mainPanel = new javax.swing.JPanel();
-        versionLabel = new javax.swing.JLabel();
         newGameLabel = new javax.swing.JLabel();
         newGame = new javax.swing.JButton();
-        loadGameLabel = new javax.swing.JLabel();
-        loadGame = new javax.swing.JButton();
-        optionGameLabel = new javax.swing.JLabel();
-        optionBut = new javax.swing.JButton();
-        exitLabel = new javax.swing.JLabel();
-        exitGame = new javax.swing.JButton();
-        mainTitleOutlier = new javax.swing.JLabel();
-        mainTitle = new javax.swing.JLabel();
-        mainTitleUnderline = new javax.swing.JLabel();
         mainSakura = new javax.swing.JLabel();
-        mainDoor = new javax.swing.JLabel();
         bgFade = new javax.swing.JLabel();
         bgColor = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nihon-Go");
         setIconImages(null);
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 720));
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -62,16 +50,9 @@ public class mainUI extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
-        getContentPane().setLayout(null);
 
         mainPanel.setPreferredSize(new java.awt.Dimension(1280, 720));
         mainPanel.setLayout(null);
-
-        versionLabel.setFont(new java.awt.Font("Manga Temple", 1, 18)); // NOI18N
-        versionLabel.setForeground(new java.awt.Color(46, 3, 37));
-        versionLabel.setText("v.1.0.0");
-        mainPanel.add(versionLabel);
-        versionLabel.setBounds(760, 120, 83, 40);
 
         newGameLabel.setFont(new java.awt.Font("Manga Temple", 1, 18)); // NOI18N
         newGameLabel.setForeground(new java.awt.Color(46, 3, 37));
@@ -91,71 +72,11 @@ public class mainUI extends javax.swing.JFrame {
         mainPanel.add(newGame);
         newGame.setBounds(540, 340, 200, 50);
 
-        loadGameLabel.setFont(new java.awt.Font("Manga Temple", 1, 18)); // NOI18N
-        loadGameLabel.setForeground(new java.awt.Color(46, 3, 37));
-        loadGameLabel.setText("LOAD GAME");
-        mainPanel.add(loadGameLabel);
-        loadGameLabel.setBounds(570, 412, 140, 40);
-
-        loadGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/button.png"))); // NOI18N
-        loadGame.setBorder(null);
-        loadGame.setBorderPainted(false);
-        loadGame.setContentAreaFilled(false);
-        mainPanel.add(loadGame);
-        loadGame.setBounds(540, 410, 200, 50);
-
-        optionGameLabel.setFont(new java.awt.Font("Manga Temple", 1, 18)); // NOI18N
-        optionGameLabel.setForeground(new java.awt.Color(46, 3, 37));
-        optionGameLabel.setText("OPTIONS");
-        mainPanel.add(optionGameLabel);
-        optionGameLabel.setBounds(590, 480, 110, 50);
-
-        optionBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/button.png"))); // NOI18N
-        optionBut.setBorder(null);
-        optionBut.setBorderPainted(false);
-        optionBut.setContentAreaFilled(false);
-        mainPanel.add(optionBut);
-        optionBut.setBounds(540, 480, 200, 50);
-
-        exitLabel.setFont(new java.awt.Font("Manga Temple", 1, 18)); // NOI18N
-        exitLabel.setForeground(new java.awt.Color(46, 3, 37));
-        exitLabel.setText("EXIT");
-        mainPanel.add(exitLabel);
-        exitLabel.setBounds(610, 550, 60, 40);
-
-        exitGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/button.png"))); // NOI18N
-        exitGame.setBorder(null);
-        exitGame.setBorderPainted(false);
-        exitGame.setContentAreaFilled(false);
-        exitGame.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitGameActionPerformed(evt);
-            }
-        });
-        mainPanel.add(exitGame);
-        exitGame.setBounds(540, 550, 200, 50);
-
-        mainTitleOutlier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/mainTitleOutlier.png"))); // NOI18N
-        mainPanel.add(mainTitleOutlier);
-        mainTitleOutlier.setBounds(0, 0, 1280, 720);
-
-        mainTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/mainTitle.png"))); // NOI18N
-        mainPanel.add(mainTitle);
-        mainTitle.setBounds(0, 0, 1280, 720);
-
-        mainTitleUnderline.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/mainTitleUnderline.png"))); // NOI18N
-        mainPanel.add(mainTitleUnderline);
-        mainTitleUnderline.setBounds(0, 0, 1280, 720);
-
         mainSakura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/mainSakura.png"))); // NOI18N
         mainPanel.add(mainSakura);
         mainSakura.setBounds(0, 0, 1280, 720);
 
-        mainDoor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/mainDoor.png"))); // NOI18N
-        mainPanel.add(mainDoor);
-        mainDoor.setBounds(0, 0, 1280, 720);
-
-        bgFade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/bgFade.png"))); // NOI18N
+        bgFade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/fade.png"))); // NOI18N
         mainPanel.add(bgFade);
         bgFade.setBounds(0, 0, 1280, 720);
 
@@ -163,8 +84,7 @@ public class mainUI extends javax.swing.JFrame {
         mainPanel.add(bgColor);
         bgColor.setBounds(0, 0, 1280, 720);
 
-        getContentPane().add(mainPanel);
-        mainPanel.setBounds(0, 0, 1280, 720);
+        getContentPane().add(mainPanel, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -174,15 +94,10 @@ public class mainUI extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowOpened
 
-    private void exitGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitGameActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-    }//GEN-LAST:event_exitGameActionPerformed
-
     private void newGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameActionPerformed
         // TODO add your handling code here:
         newGameUI ngu = new newGameUI();
-        
+
         ngu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_newGameActionPerformed
@@ -226,20 +141,9 @@ public class mainUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bgColor;
     private javax.swing.JLabel bgFade;
-    private javax.swing.JButton exitGame;
-    private javax.swing.JLabel exitLabel;
-    private javax.swing.JButton loadGame;
-    private javax.swing.JLabel loadGameLabel;
-    private javax.swing.JLabel mainDoor;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel mainSakura;
-    private javax.swing.JLabel mainTitle;
-    private javax.swing.JLabel mainTitleOutlier;
-    private javax.swing.JLabel mainTitleUnderline;
     private javax.swing.JButton newGame;
     private javax.swing.JLabel newGameLabel;
-    private javax.swing.JButton optionBut;
-    private javax.swing.JLabel optionGameLabel;
-    private javax.swing.JLabel versionLabel;
     // End of variables declaration//GEN-END:variables
 }
