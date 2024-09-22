@@ -1,6 +1,5 @@
 
 import java.awt.Image;
-import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
 /*
@@ -12,12 +11,12 @@ import javax.swing.ImageIcon;
  *
  * @author pilotjones
  */
-public class newGameUI extends javax.swing.JFrame {
-    
+public class hiraganaUI extends javax.swing.JFrame {
+
     /**
-     * Creates new form mainUI
+     * Creates new form hiraganaUI
      */
-    public newGameUI() {
+    public hiraganaUI() {
         initComponents();
         Image img = new ImageIcon(this.getClass().getResource("assets/jpnFlag"
                 + ".png")).getImage();
@@ -44,14 +43,13 @@ public class newGameUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nihon-Go");
-        setIconImages(null);
         setResizable(false);
-        setSize(new java.awt.Dimension(1280, 720));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(null);
 
         mainPanel.setPreferredSize(new java.awt.Dimension(1280, 720));
         mainPanel.setLayout(null);
@@ -104,7 +102,8 @@ public class newGameUI extends javax.swing.JFrame {
         mainPanel.add(bgColor);
         bgColor.setBounds(0, 0, 1280, 720);
 
-        getContentPane().add(mainPanel, java.awt.BorderLayout.CENTER);
+        getContentPane().add(mainPanel);
+        mainPanel.setBounds(0, 0, 1280, 720);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -117,7 +116,7 @@ public class newGameUI extends javax.swing.JFrame {
     private void hiraganaGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hiraganaGameActionPerformed
         // TODO add your handling code here:
         hiraganaUI hgui = new hiraganaUI();
-        
+
         hgui.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_hiraganaGameActionPerformed
@@ -125,7 +124,7 @@ public class newGameUI extends javax.swing.JFrame {
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
         mainUI mui = new mainUI();
-        
+
         mui.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed
@@ -147,23 +146,22 @@ public class newGameUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(mainUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(hiraganaUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(mainUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(hiraganaUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(mainUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(hiraganaUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(mainUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(hiraganaUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new mainUI().setVisible(true);
+                new hiraganaUI().setVisible(true);
             }
         });
-       
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

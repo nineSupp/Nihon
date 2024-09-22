@@ -1,8 +1,3 @@
-
-import java.awt.Image;
-import java.awt.Toolkit;
-import javax.swing.ImageIcon;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -12,16 +7,13 @@ import javax.swing.ImageIcon;
  *
  * @author pilotjones
  */
-public class newGameUI extends javax.swing.JFrame {
-    
+public class creditUI extends javax.swing.JFrame {
+
     /**
-     * Creates new form mainUI
+     * Creates new form creditUI
      */
-    public newGameUI() {
+    public creditUI() {
         initComponents();
-        Image img = new ImageIcon(this.getClass().getResource("assets/jpnFlag"
-                + ".png")).getImage();
-        this.setIconImage(img);
     }
 
     /**
@@ -34,8 +26,6 @@ public class newGameUI extends javax.swing.JFrame {
     private void initComponents() {
 
         mainPanel = new javax.swing.JPanel();
-        hiraganaaLabel = new javax.swing.JLabel();
-        hiraganaGame = new javax.swing.JButton();
         backLabel = new javax.swing.JLabel();
         backButton = new javax.swing.JButton();
         mainSakura = new javax.swing.JLabel();
@@ -43,42 +33,21 @@ public class newGameUI extends javax.swing.JFrame {
         bgColor = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Nihon-Go");
-        setIconImages(null);
-        setResizable(false);
-        setSize(new java.awt.Dimension(1280, 720));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(null);
 
         mainPanel.setPreferredSize(new java.awt.Dimension(1280, 720));
         mainPanel.setLayout(null);
-
-        hiraganaaLabel.setFont(new java.awt.Font("Manga Temple", 1, 18)); // NOI18N
-        hiraganaaLabel.setForeground(new java.awt.Color(46, 3, 37));
-        hiraganaaLabel.setText("HIRAGANA");
-        mainPanel.add(hiraganaaLabel);
-        hiraganaaLabel.setBounds(580, 320, 120, 40);
-
-        hiraganaGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/button.png"))); // NOI18N
-        hiraganaGame.setBorder(null);
-        hiraganaGame.setBorderPainted(false);
-        hiraganaGame.setContentAreaFilled(false);
-        hiraganaGame.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hiraganaGameActionPerformed(evt);
-            }
-        });
-        mainPanel.add(hiraganaGame);
-        hiraganaGame.setBounds(540, 320, 200, 50);
 
         backLabel.setFont(new java.awt.Font("Manga Temple", 1, 18)); // NOI18N
         backLabel.setForeground(new java.awt.Color(46, 3, 37));
         backLabel.setText("BACK");
         mainPanel.add(backLabel);
-        backLabel.setBounds(610, 380, 70, 40);
+        backLabel.setBounds(610, 620, 70, 40);
 
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/button.png"))); // NOI18N
         backButton.setBorder(null);
@@ -90,7 +59,7 @@ public class newGameUI extends javax.swing.JFrame {
             }
         });
         mainPanel.add(backButton);
-        backButton.setBounds(540, 380, 200, 50);
+        backButton.setBounds(540, 620, 200, 50);
 
         mainSakura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/mainSakura.png"))); // NOI18N
         mainPanel.add(mainSakura);
@@ -104,7 +73,8 @@ public class newGameUI extends javax.swing.JFrame {
         mainPanel.add(bgColor);
         bgColor.setBounds(0, 0, 1280, 720);
 
-        getContentPane().add(mainPanel, java.awt.BorderLayout.CENTER);
+        getContentPane().add(mainPanel);
+        mainPanel.setBounds(0, 0, 1280, 720);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -114,18 +84,10 @@ public class newGameUI extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }//GEN-LAST:event_formWindowOpened
 
-    private void hiraganaGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hiraganaGameActionPerformed
-        // TODO add your handling code here:
-        hiraganaUI hgui = new hiraganaUI();
-        
-        hgui.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_hiraganaGameActionPerformed
-
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
         mainUI mui = new mainUI();
-        
+
         mui.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed
@@ -147,23 +109,22 @@ public class newGameUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(mainUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(creditUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(mainUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(creditUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(mainUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(creditUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(mainUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(creditUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new mainUI().setVisible(true);
+                new creditUI().setVisible(true);
             }
         });
-       
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -171,8 +132,6 @@ public class newGameUI extends javax.swing.JFrame {
     private javax.swing.JLabel backLabel;
     private javax.swing.JLabel bgColor;
     private javax.swing.JLabel bgFade;
-    private javax.swing.JButton hiraganaGame;
-    private javax.swing.JLabel hiraganaaLabel;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel mainSakura;
     // End of variables declaration//GEN-END:variables
