@@ -11,7 +11,15 @@ import javax.swing.ImageIcon;
  *
  * @author pilotjones
  */
+import java.util.Random;
 public class hiraganaUI extends javax.swing.JFrame {
+    private static Hira h = new Hira();
+    private static Random random = new Random();
+    private  int nA=  random.nextInt(1, 4);//random number of bottom that show corrat answer
+    private  String t1;//empty String go to custom code bottom1 to see assing value
+    private  String t2;//empty String go to custom code bottom1 to see assing value
+    private String t3;//empty String  go to custom code bottom1 to see assing value
+    private  String a;//empty String go to custom code bottom1 to see assing value
 
     /**
      * Creates new form hiraganaUI
@@ -33,10 +41,12 @@ public class hiraganaUI extends javax.swing.JFrame {
     private void initComponents() {
 
         mainPanel = new javax.swing.JPanel();
-        hiraganaaLabel = new javax.swing.JLabel();
-        hiraganaGame = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
         backButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         mainSakura = new javax.swing.JLabel();
         bgFade = new javax.swing.JLabel();
         bgColor = new javax.swing.JLabel();
@@ -49,34 +59,25 @@ public class hiraganaUI extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
-        getContentPane().setLayout(null);
 
         mainPanel.setPreferredSize(new java.awt.Dimension(1280, 720));
         mainPanel.setLayout(null);
 
-        hiraganaaLabel.setFont(new java.awt.Font("Manga Temple", 1, 18)); // NOI18N
-        hiraganaaLabel.setForeground(new java.awt.Color(46, 3, 37));
-        hiraganaaLabel.setText("HIRAGANA");
-        mainPanel.add(hiraganaaLabel);
-        hiraganaaLabel.setBounds(580, 320, 120, 40);
-
-        hiraganaGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/button.png"))); // NOI18N
-        hiraganaGame.setBorder(null);
-        hiraganaGame.setBorderPainted(false);
-        hiraganaGame.setContentAreaFilled(false);
-        hiraganaGame.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hiraganaGameActionPerformed(evt);
-            }
-        });
-        mainPanel.add(hiraganaGame);
-        hiraganaGame.setBounds(540, 320, 200, 50);
+        Hira gan = new Hira();
+        String q = gan.ganQuestion();
+        jLabel1.setFont(new java.awt.Font("Yu Mincho", 0, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText(q);
+        jLabel1.setToolTipText("");
+        mainPanel.add(jLabel1);
+        jLabel1.setBounds(580, 200, 70, 90);
 
         backLabel.setFont(new java.awt.Font("Manga Temple", 1, 18)); // NOI18N
         backLabel.setForeground(new java.awt.Color(46, 3, 37));
         backLabel.setText("BACK");
         mainPanel.add(backLabel);
-        backLabel.setBounds(610, 380, 70, 40);
+        backLabel.setBounds(610, 600, 70, 40);
 
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/button.png"))); // NOI18N
         backButton.setBorder(null);
@@ -88,7 +89,41 @@ public class hiraganaUI extends javax.swing.JFrame {
             }
         });
         mainPanel.add(backButton);
-        backButton.setBounds(540, 380, 200, 50);
+        backButton.setBounds(540, 600, 200, 50);
+
+        t1 = h.getText(); // get rondom romanji form hari calss
+        t2 = h.getText2();// get rondom romanji form hari calss
+        t3 = h.getText3();// get rondom romanji form hari calss
+        a=h.getAnswer(); // get correct romanji form hari calss
+        int b1 = 1; // numbur refer button 1
+        int b2 = 2;// numbur refar button 2
+        int b3 = 3;// numbur refar button 3
+        // chcek if this bottom goning to show correct answer or not
+        // this logic chcek have in all the button
+        if(b1==nA){
+            jButton1.setText(a);
+        }else{
+            jButton1.setText(t1);
+        }
+        mainPanel.add(jButton1);
+        jButton1.setBounds(260, 390, 100, 100);
+
+        if(b2==nA){
+            jButton2.setText(a);
+        }else{
+            jButton2.setText(t2);
+        }
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        mainPanel.add(jButton2);
+        jButton2.setBounds(570, 390, 100, 100);
+
+        if(b3==nA){
+            jButton3.setText(a);
+        }else{
+            jButton3.setText(t3);
+        }
+        mainPanel.add(jButton3);
+        jButton3.setBounds(880, 390, 100, 100);
 
         mainSakura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/mainSakura.png"))); // NOI18N
         mainPanel.add(mainSakura);
@@ -102,8 +137,7 @@ public class hiraganaUI extends javax.swing.JFrame {
         mainPanel.add(bgColor);
         bgColor.setBounds(0, 0, 1280, 720);
 
-        getContentPane().add(mainPanel);
-        mainPanel.setBounds(0, 0, 1280, 720);
+        getContentPane().add(mainPanel, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -111,21 +145,14 @@ public class hiraganaUI extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         this.setLocationRelativeTo(null);
+        
     }//GEN-LAST:event_formWindowOpened
-
-    private void hiraganaGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hiraganaGameActionPerformed
-        // TODO add your handling code here:
-        hiraganaUI hgui = new hiraganaUI();
-
-        hgui.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_hiraganaGameActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
-        mainUI mui = new mainUI();
+        newGameUI ngui = new newGameUI();
 
-        mui.setVisible(true);
+        ngui.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed
 
@@ -158,7 +185,7 @@ public class hiraganaUI extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+            public  void run() {
                 new hiraganaUI().setVisible(true);
             }
         });
@@ -169,8 +196,10 @@ public class hiraganaUI extends javax.swing.JFrame {
     private javax.swing.JLabel backLabel;
     private javax.swing.JLabel bgColor;
     private javax.swing.JLabel bgFade;
-    private javax.swing.JButton hiraganaGame;
-    private javax.swing.JLabel hiraganaaLabel;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel mainSakura;
     // End of variables declaration//GEN-END:variables
