@@ -10,7 +10,7 @@
 import java.util.Random;
 public class Hira {
     // Array for Hira
-    private static String[] hiragana = {
+    private  String[] hiragana = {
             "あ", "い", "う", "え", "お",
             "か", "き", "く", "け", "こ",
             "が", "ぎ", "ぐ", "げ", "ご",
@@ -29,7 +29,7 @@ public class Hira {
     };
 
     // Array for Roman (Romanji)
-    private static String[] romanji = {
+    private  String[] romanji = {
             "a", "i", "u", "e", "o",
             "ka", "ki", "ku", "ke", "ko",
             "ga", "gi", "gu", "ge", "go",
@@ -47,22 +47,24 @@ public class Hira {
             "wa", "wo", "n"
     };
     private static Random random = new Random();
-    private static int Answer;
-    private static int scorer = 0;
-    private static int numAnswer =  random.nextInt(1, 4);
+    private  int Answer;
+    private  int scorer = 0;
+    private  int numAnswer =  random.nextInt(1, 4);
     private  String TAnswer;
-    private static String text1= romanji[random.nextInt(romanji.length)];
-    private static String text2= romanji[random.nextInt(romanji.length)];
-    private static String text3= romanji[random.nextInt(romanji.length)];
-    
+    private  String text1= romanji[random.nextInt(romanji.length)];
+    private  String text2= romanji[random.nextInt(romanji.length)];
+    private  String text3= romanji[random.nextInt(romanji.length)];
+    private String romanA = romanji[Answer];
 
 
    
     public String ganQuestion() {
-        int index = random.nextInt(hiragana.length);
+        int index = random.nextInt(0,71);
         Answer = index;//assigan the index to Answer
-        return TAnswer = hiragana[index]; // assing the Text of hira    
+        TAnswer = hiragana[index];  // Hiragana character at that index
+        return TAnswer ; // assing the Text of hira    
     }
+    
     
 //public static String  ganAnswer1() {
 //        numAnswer = random.nextInt(1, 4);      
@@ -85,21 +87,24 @@ public class Hira {
 //            }   
 //        return text2;
 //    }
-public static String getAnswer(){
-    return romanji[Answer];//get romanji use index num
+public  String getAnswer(){
+    return this.romanji[Answer];//get romanji use index num
 }
-public static String getText(){
+public  String getText(){
     return text1;
 }
-public static String getText2(){
+public  String getText2(){
     return text2;
 }
-public static String getText3(){
+public  String getText3(){
     return text3;
+}
+public String getTAnswer(){
+    return this.TAnswer;
 }
    
 
-    public static void setScorer(int input) {
+    public  void setScorer(int input) {
         for (int i = 1; i < 3; i++) {
             if (numAnswer == input) {
                 scorer++;

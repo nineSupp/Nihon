@@ -117,7 +117,6 @@ public class newGameUI extends javax.swing.JFrame {
     private void hiraganaGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hiraganaGameActionPerformed
         // TODO add your handling code here:
         hiraganaUI hgui = new hiraganaUI();
-        
         hgui.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_hiraganaGameActionPerformed
