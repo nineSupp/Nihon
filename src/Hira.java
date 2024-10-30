@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class Hira {
     // Array for Hira
-    private  String[] hiragana = {
+    private final String[] hiragana = {
             "あ", "い", "う", "え", "お",
             "か", "き", "く", "け", "こ",
             "が", "ぎ", "ぐ", "げ", "ご",
@@ -31,7 +31,7 @@ public class Hira {
     };
 
     // Array for Roman (Romanji)
-    private  String[] romanji = {
+    private final String[] romanji = {
             "a", "i", "u", "e", "o",
             "ka", "ki", "ku", "ke", "ko",
             "ga", "gi", "gu", "ge", "go",
@@ -51,8 +51,6 @@ public class Hira {
     
     private static Random random = new Random();
     private int Answer;
-    private int scorer = 0;
-    private int numAnswer =  random.nextInt(1, 4);
     private String TAnswer;
     private String text1= romanji[random.nextInt(romanji.length)];
     private String text2= romanji[random.nextInt(romanji.length)];
@@ -64,6 +62,16 @@ public class Hira {
         Answer = index;//assigan the index to Answer
         TAnswer = hiragana[index];  // Hiragana character at that index
         return TAnswer ; // assing the Text of hira    
+    }
+    public String checkRomaji(String rom) {
+        switch (rom) {
+            case "ji2":
+                return "ji";
+            case "zu2":
+                return "zu";
+            default:
+                return rom;
+        }
     }
     
     public void getLocation(String romaji) {
@@ -84,14 +92,5 @@ public class Hira {
     
     public String getLo() { return this.romanA; }
    
-    public  void setScorer(int input) {
-        for (int i = 1; i < 3; i++) {
-            if (numAnswer == input) {
-                scorer++;
-                break;
-            } else {
-                System.out.print("Try agian:");         
-            }
-        }
-    }
+
 }
