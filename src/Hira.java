@@ -38,7 +38,7 @@ public class Hira {
             "sa", "shi", "su", "se", "so",
             "za", "ji", "zu", "ze", "zo",
             "ta", "chi", "tsu", "te", "to",
-            "da", "ji2", "zu2", "de", "do",
+            "da", "ji2", "du", "de", "do",
             "na", "ni", "nu", "ne", "no",
             "ha", "hi", "fu", "he", "ho",
             "ba", "bi", "bu", "be", "bo",
@@ -67,8 +67,6 @@ public class Hira {
         switch (rom) {
             case "ji2":
                 return "ji";
-            case "zu2":
-                return "zu";
             default:
                 return rom;
         }

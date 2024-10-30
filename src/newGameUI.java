@@ -34,9 +34,10 @@ public class newGameUI extends javax.swing.JFrame {
     private void initComponents() {
 
         mainPanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         hiraganaaLabel = new javax.swing.JLabel();
         hiraganaGame = new javax.swing.JButton();
+        katakanaLabel = new javax.swing.JLabel();
+        katakanaGame = new javax.swing.JButton();
         backLabel = new javax.swing.JLabel();
         backButton = new javax.swing.JButton();
         mainSakura = new javax.swing.JLabel();
@@ -57,20 +58,11 @@ public class newGameUI extends javax.swing.JFrame {
         mainPanel.setPreferredSize(new java.awt.Dimension(1280, 720));
         mainPanel.setLayout(null);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        mainPanel.add(jButton1);
-        jButton1.setBounds(550, 230, 160, 60);
-
         hiraganaaLabel.setFont(new java.awt.Font("Manga Temple", 1, 18)); // NOI18N
         hiraganaaLabel.setForeground(new java.awt.Color(46, 3, 37));
         hiraganaaLabel.setText("HIRAGANA");
         mainPanel.add(hiraganaaLabel);
-        hiraganaaLabel.setBounds(580, 320, 120, 40);
+        hiraganaaLabel.setBounds(580, 280, 120, 40);
 
         hiraganaGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/button.png"))); // NOI18N
         hiraganaGame.setBorder(null);
@@ -82,13 +74,31 @@ public class newGameUI extends javax.swing.JFrame {
             }
         });
         mainPanel.add(hiraganaGame);
-        hiraganaGame.setBounds(540, 320, 200, 50);
+        hiraganaGame.setBounds(540, 280, 200, 50);
+
+        katakanaLabel.setFont(new java.awt.Font("Manga Temple", 1, 18)); // NOI18N
+        katakanaLabel.setForeground(new java.awt.Color(46, 3, 37));
+        katakanaLabel.setText("KATAKANA");
+        mainPanel.add(katakanaLabel);
+        katakanaLabel.setBounds(580, 340, 120, 40);
+
+        katakanaGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/button.png"))); // NOI18N
+        katakanaGame.setBorder(null);
+        katakanaGame.setBorderPainted(false);
+        katakanaGame.setContentAreaFilled(false);
+        katakanaGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                katakanaGameActionPerformed(evt);
+            }
+        });
+        mainPanel.add(katakanaGame);
+        katakanaGame.setBounds(540, 340, 200, 50);
 
         backLabel.setFont(new java.awt.Font("Manga Temple", 1, 18)); // NOI18N
         backLabel.setForeground(new java.awt.Color(46, 3, 37));
         backLabel.setText("BACK");
         mainPanel.add(backLabel);
-        backLabel.setBounds(610, 380, 70, 40);
+        backLabel.setBounds(610, 400, 70, 40);
 
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/button.png"))); // NOI18N
         backButton.setBorder(null);
@@ -100,7 +110,7 @@ public class newGameUI extends javax.swing.JFrame {
             }
         });
         mainPanel.add(backButton);
-        backButton.setBounds(540, 380, 200, 50);
+        backButton.setBounds(540, 400, 200, 50);
 
         mainSakura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/mainSakura.png"))); // NOI18N
         mainPanel.add(mainSakura);
@@ -139,12 +149,13 @@ public class newGameUI extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void katakanaGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_katakanaGameActionPerformed
         // TODO add your handling code here:
-        katakanaUI kata = new katakanaUI();
-        kata.setVisible(true);
+        katakanaUI ktui = new katakanaUI();
+        
+        ktui.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_katakanaGameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,7 +200,8 @@ public class newGameUI extends javax.swing.JFrame {
     private javax.swing.JLabel bgFade;
     private javax.swing.JButton hiraganaGame;
     private javax.swing.JLabel hiraganaaLabel;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton katakanaGame;
+    private javax.swing.JLabel katakanaLabel;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel mainSakura;
     // End of variables declaration//GEN-END:variables

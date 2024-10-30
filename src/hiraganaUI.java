@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JMenuItem;
 
 public class hiraganaUI extends javax.swing.JFrame {
     private Hira h = new Hira();
@@ -26,9 +27,9 @@ public class hiraganaUI extends javax.swing.JFrame {
     public hiraganaUI() {
         h.ganQuestion();
         nA = random.nextInt(1, 4); // Random number between 1 and 3
-        t1 = h.getText(); // Text for button 1
-        t2 = h.getText2(); // Text for button 2
-        t3 = h.getText3(); // Text for button 3
+        t1 = h.checkRomaji(h.getText()); // Text for button 1
+        t2 = h.checkRomaji(h.getText2()); // Text for button 2
+        t3 = h.checkRomaji(h.getText3()); // Text for button 3
         a = h.getAnswer();// Correct answer text
          
         initComponents();

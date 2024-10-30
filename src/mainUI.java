@@ -101,6 +101,11 @@ public class mainUI extends javax.swing.JFrame {
         credits.setBorder(null);
         credits.setBorderPainted(false);
         credits.setContentAreaFilled(false);
+        credits.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                creditsActionPerformed(evt);
+            }
+        });
         mainPanel.add(credits);
         credits.setBounds(540, 410, 200, 50);
 
@@ -186,6 +191,14 @@ public class mainUI extends javax.swing.JFrame {
         ngu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_newGameActionPerformed
+
+    private void creditsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditsActionPerformed
+        // TODO add your handling code here:
+        creditUI cui = new creditUI();
+        
+        cui.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_creditsActionPerformed
 
     /**
      * @param args the command line arguments

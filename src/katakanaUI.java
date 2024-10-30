@@ -32,12 +32,13 @@ public class katakanaUI extends javax.swing.JFrame {
         a = k.getAnswer();// Correct answer text
          
         initComponents();
-        //Image img = new ImageIcon(this.getClass().getResource("assets/jpnFlag" 
-        //        + ".png")).getImage();
-        //this.setIconImage(img);
+        Image img = new ImageIcon(this.getClass().getResource("assets/jpnFlag" 
+                + ".png")).getImage();
+        this.setIconImage(img);
         
         k.getLocation(a);
-        jLabel1.setText(k.getTAnswer());
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(
+                k.getLo())));
         nA = random.nextInt(3); // Randomly select 0, 1, or 2
 
         // Assign correct answer to one of the buttons
@@ -61,17 +62,18 @@ public class katakanaUI extends javax.swing.JFrame {
     public void katakanaUI() {
         k.ganQuestion();
         nA = random.nextInt(1, 4); // Random number between 1 and 3
-        t1 = k.checkRomaji(k.getText()); // Text for button 1
-        t2 = k.checkRomaji(k.getText2());// Text for button 2
-        t3 = k.checkRomaji(k.getText3()); // Text for button 3
+        t1 = k.getText(); // Text for button 1
+        t2 = k.getText2();// Text for button 2
+        t3 = k.getText3(); // Text for button 3
         a = k.getAnswer();// Correct answer text
         
-       // Image img = new ImageIcon(this.getClass().getResource("assets/jpnFlag"  
-        //        + ".png")).getImage();
-        //this.setIconImage(img);
+        Image img = new ImageIcon(this.getClass().getResource("assets/jpnFlag"  
+                + ".png")).getImage();
+        this.setIconImage(img);
         
         k.getLocation(a);
-        jLabel1.setText(k.getTAnswer());
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(
+                k.getLo())));
         
         nA = random.nextInt(3); // Randomly select 0, 1, or 2
 
