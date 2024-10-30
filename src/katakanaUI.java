@@ -15,7 +15,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class hiraganaUI extends javax.swing.JFrame {
+public class katakanaUI extends javax.swing.JFrame {
     private Hira h = new Hira();
     private Random random = new Random();
     private int nA;
@@ -23,7 +23,7 @@ public class hiraganaUI extends javax.swing.JFrame {
     private int score = 0;
     private boolean check;
 
-    public hiraganaUI() {
+    public katakanaUI() {
         h.ganQuestion();
         nA = random.nextInt(1, 4); // Random number between 1 and 3
         t1 = h.getText(); // Text for button 1

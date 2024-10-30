@@ -7,7 +7,9 @@
  *
  * @author Win
  */
+
 import java.util.Random;
+
 public class Hira {
     // Array for Hira
     private  String[] hiragana = {
@@ -36,7 +38,7 @@ public class Hira {
             "sa", "shi", "su", "se", "so",
             "za", "ji", "zu", "ze", "zo",
             "ta", "chi", "tsu", "te", "to",
-            "da", "ji", "zu", "de", "do",
+            "da", "ji2", "zu2", "de", "do",
             "na", "ni", "nu", "ne", "no",
             "ha", "hi", "fu", "he", "ho",
             "ba", "bi", "bu", "be", "bo",
@@ -46,18 +48,17 @@ public class Hira {
             "ra", "ri", "ru", "re", "ro",
             "wa", "wo", "n"
     };
+    
     private static Random random = new Random();
-    private  int Answer;
-    private  int scorer = 0;
-    private  int numAnswer =  random.nextInt(1, 4);
-    private  String TAnswer;
-    private  String text1= romanji[random.nextInt(romanji.length)];
-    private  String text2= romanji[random.nextInt(romanji.length)];
-    private  String text3= romanji[random.nextInt(romanji.length)];
-    private String romanA = romanji[Answer];
+    private int Answer;
+    private int scorer = 0;
+    private int numAnswer =  random.nextInt(1, 4);
+    private String TAnswer;
+    private String text1= romanji[random.nextInt(romanji.length)];
+    private String text2= romanji[random.nextInt(romanji.length)];
+    private String text3= romanji[random.nextInt(romanji.length)];
+    private String romanA;
 
-
-   
     public String ganQuestion() {
         int index = random.nextInt(0,71);
         Answer = index;//assigan the index to Answer
@@ -65,56 +66,32 @@ public class Hira {
         return TAnswer ; // assing the Text of hira    
     }
     
+    public void getLocation(String romaji) {
+        String sb = "assets/hiraganaChar/" + romaji + ".png";
+        this.romanA = sb;
+    }
     
-//public static String  ganAnswer1() {
-//        numAnswer = random.nextInt(1, 4);      
-//        for (int i = 1; i <= 3; i++) {
-//            int index = random.nextInt(71);
-//            int index2 = random.nextInt(71);
-//                text1 = romanji[index];
-//                
-//            }   
-//        return text1;
-//    }
-//
-//public static String  ganAnswer2() {
-//        numAnswer = random.nextInt(1, 4);      
-//        for (int i = 1; i <= 3; i++) {
-//            int index = random.nextInt(71);
-//            int index2 = random.nextInt(71);
-//                text2 = romanji[index];
-//                
-//            }   
-//        return text2;
-//    }
-public  String getAnswer(){
-    return this.romanji[Answer];//get romanji use index num
-}
-public  String getText(){
-    return text1;
-}
-public  String getText2(){
-    return text2;
-}
-public  String getText3(){
-    return text3;
-}
-public String getTAnswer(){
-    return this.TAnswer;
-}
+    //get romanji use index num
+    public  String getAnswer(){ return this.romanji[Answer]; }
+    
+    public  String getText(){ return text1; }
    
-
+    public  String getText2(){ return text2; }
+    
+    public  String getText3(){ return text3; }
+    
+    public String getTAnswer(){ return this.TAnswer; }
+    
+    public String getLo() { return this.romanA; }
+   
     public  void setScorer(int input) {
         for (int i = 1; i < 3; i++) {
             if (numAnswer == input) {
                 scorer++;
                 break;
             } else {
-                System.out.print("Try agian:");
-            
+                System.out.print("Try agian:");         
             }
         }
-
     }
-    
 }
