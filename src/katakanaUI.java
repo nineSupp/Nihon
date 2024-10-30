@@ -16,7 +16,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class katakanaUI extends javax.swing.JFrame {
-    private Hira h = new Hira();
+    private Kata k = new Kata();
     private Random random = new Random();
     private int nA;
     private String t1,t2,t3,a;
@@ -24,21 +24,20 @@ public class katakanaUI extends javax.swing.JFrame {
     private boolean check;
 
     public katakanaUI() {
-        h.ganQuestion();
+        k.ganQuestion();
         nA = random.nextInt(1, 4); // Random number between 1 and 3
-        t1 = h.getText(); // Text for button 1
-        t2 = h.getText2(); // Text for button 2
-        t3 = h.getText3(); // Text for button 3
-        a = h.getAnswer();// Correct answer text
+        t1 = k.checkRomaji(k.getText()); // Text for button 1
+        t2 = k.checkRomaji(k.getText2()); // Text for button 2
+        t3 = k.checkRomaji(k.getText3()); // Text for button 3
+        a = k.getAnswer();// Correct answer text
          
         initComponents();
-        Image img = new ImageIcon(this.getClass().getResource("assets/jpnFlag" 
-                + ".png")).getImage();
-        this.setIconImage(img);
+        //Image img = new ImageIcon(this.getClass().getResource("assets/jpnFlag" 
+        //        + ".png")).getImage();
+        //this.setIconImage(img);
         
-        h.getLocation(a);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-                h.getLo())));
+        k.getLocation(a);
+        jLabel1.setText(k.getTAnswer());
         nA = random.nextInt(3); // Randomly select 0, 1, or 2
 
         // Assign correct answer to one of the buttons
@@ -59,27 +58,26 @@ public class katakanaUI extends javax.swing.JFrame {
         jLabel2.setText(String.valueOf(score));
     }
 
-    public void hiraganaUI() {
-        h.ganQuestion();
+    public void katakanaUI() {
+        k.ganQuestion();
         nA = random.nextInt(1, 4); // Random number between 1 and 3
-        t1 = h.getText(); // Text for button 1
-        t2 = h.getText2(); // Text for button 2
-        t3 = h.getText3(); // Text for button 3
-        a = h.getAnswer();// Correct answer text
+        t1 = k.checkRomaji(k.getText()); // Text for button 1
+        t2 = k.checkRomaji(k.getText2());// Text for button 2
+        t3 = k.checkRomaji(k.getText3()); // Text for button 3
+        a = k.getAnswer();// Correct answer text
         
-        Image img = new ImageIcon(this.getClass().getResource("assets/jpnFlag"  
-                + ".png")).getImage();
-        this.setIconImage(img);
+       // Image img = new ImageIcon(this.getClass().getResource("assets/jpnFlag"  
+        //        + ".png")).getImage();
+        //this.setIconImage(img);
         
-        h.getLocation(a);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(
-                h.getLo())));
+        k.getLocation(a);
+        jLabel1.setText(k.getTAnswer());
         
         nA = random.nextInt(3); // Randomly select 0, 1, or 2
 
         // Assign correct answer to one of the buttons
         if (nA == 0) {
-            jButton1.setText(a); // Correct answer on button 1
+            jButton1.setText(a);// Correct answer on button 1
             jButton2.setText(t1); // Random incorrect answer on button 2
             jButton3.setText(t2); // Random incorrect answer on button 3
         } else if (nA == 1) {
@@ -95,25 +93,7 @@ public class katakanaUI extends javax.swing.JFrame {
         jLabel2.setText(String.valueOf(score));
     }
     
-    public void Time(){
-        if(check){
-            jPopupMenu1.add("Correct");
-            jPopupMenu1.setVisible(true);
-        }else{
-            jPopupMenu1.add("Wrong");
-            jPopupMenu1.setVisible(true);
-        }
-        Timer timer = new Timer(1500, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                jPopupMenu1.setVisible(false);  // Hide the popup
-                jPopupMenu1.removeAll();
-            }
-        });
-        
-        timer.setRepeats(false);  // Only execute once
-        timer.start();  // Start the timer
-    }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -262,13 +242,13 @@ public class katakanaUI extends javax.swing.JFrame {
             check = true; 
             Time();
             score++;
-            hiraganaUI();  
+            katakanaUI();  
         } else {
             jPopupMenu1.isPopupTrigger(evt);
             check=false;
             Time();
             score--;
-            hiraganaUI();
+            katakanaUI();
         }
     }//GEN-LAST:event_jButton1MouseClicked
 
@@ -279,13 +259,13 @@ public class katakanaUI extends javax.swing.JFrame {
             check = true;
             Time();
             score++;
-            hiraganaUI();  
+            katakanaUI();  
         } else {
             jPopupMenu1.isPopupTrigger(evt);
             check = false; 
             Time();
             score--;
-            hiraganaUI();
+            katakanaUI();
         }
     }//GEN-LAST:event_jButton2MouseClicked
 
@@ -297,15 +277,34 @@ public class katakanaUI extends javax.swing.JFrame {
         check=true; 
         Time();
         score++;
-      hiraganaUI();  
+      katakanaUI();  
             
         }else{
            jPopupMenu1.isPopupTrigger(evt);
         check=false; 
         Time();
         score--;
-      hiraganaUI();         
+      katakanaUI();         
     }//GEN-LAST:event_jButton3MouseClicked
+    }
+     public void Time(){
+        if(check){
+            jPopupMenu1.add("Correct");
+            jPopupMenu1.setVisible(true);
+        }else{
+            jPopupMenu1.add("Wrong");
+            jPopupMenu1.setVisible(true);
+        }
+        Timer timer = new Timer(1500, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                jPopupMenu1.setVisible(false);  // Hide the popup
+                jPopupMenu1.removeAll();
+            }
+        });
+        
+        timer.setRepeats(false);  // Only execute once
+        timer.start();  // Start the timer
     }
     /**
      * @param args the command line arguments
